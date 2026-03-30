@@ -1,0 +1,20 @@
+<input type="text" id="search" placeholder="Cari nama guru...">
+<button onclick="cari()">Cari</button>
+
+<div id="hasil"></div>
+
+<script>
+function cari() {
+  const q = document.getElementById("search").value;
+  
+  fetch("https://script.google.com/macros/s/AKfycbx2G7b0wwFRJoJWWPHbrY6hZl3IxUPhY5463GKHlB8MmvJ2qA9eGaqNZetIkDTEpZQRDQ/exec?q=" + q)
+    .then(res => res.json())
+    .then(data => {
+      let html = "";
+      data.forEach(row => {
+        html += `<p>${row[0]} - ${row[2]} - ${row[3]}</p>`;
+      });
+      document.getElementById("hasil").innerHTML = html;
+    });
+}
+</script>

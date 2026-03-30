@@ -7,7 +7,7 @@
 function cari() {
   const q = document.getElementById("search").value;
   
-  fetch("https://script.google.com/macros/s/AKfycbx2G7b0wwFRJoJWWPHbrY6hZl3IxUPhY5463GKHlB8MmvJ2qA9eGaqNZetIkDTEpZQRDQ/exec?q=" + q)
+  fetch("AKfycbx2G7b0wwFRJoJWWPHbrY6hZl3IxUPhY5463GKHlB8MmvJ2qA9eGaqNZetIkDTEpZQRDQ?q=" + q)
     .then(res => res.json())
     .then(data => {
       let html = "";
